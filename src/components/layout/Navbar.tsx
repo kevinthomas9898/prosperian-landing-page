@@ -1,10 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { NAV_LINKS } from "@/constants/navigation";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
   return (
-    <header className="border-b bg-white">
+    <header className="sticky top-0 z-50 border-b bg-white">
       <div className="mx-auto flex h-24 items-center justify-between px-6 lg:px-10">
         <Link href="/">
           <Image
@@ -22,7 +26,11 @@ export default function Navbar() {
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="text-sm font-medium text-neutral-800 transition-colors hover:text-orange-600"
+                  className={`text-sm font-medium transition-colors hover:text-orange-600 ${
+                    pathname === item.href
+                      ? "text-orange-600 border-b-2 border-orange-600"
+                      : "text-neutral-800"
+                  }`}
                 >
                   {item.label}
                 </Link>

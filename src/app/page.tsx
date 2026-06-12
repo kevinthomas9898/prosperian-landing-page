@@ -1,3 +1,5 @@
+import { Typography } from "@/components/shared/typography";
+import { ContentSection } from "@/components/sections/content-section";
 import Image from "next/image";
 
 const stats = [
@@ -64,16 +66,16 @@ export default function HomePage() {
 
                 <div className="container-custom relative z-10">
                     <div className="flex min-h-[650px] flex-col items-center justify-center py-20 pb-0 text-center">
-                        <h1 className="text-center text-8xl font-bold">
+                        <Typography variant="84px" className="text-white">
                             Global Fintech Solutions
-                        </h1>
+                        </Typography>
 
-                        <p className="mb-16 max-w-3xl text-sm md:text-base">
+                        <Typography variant="22px" className="mt-9 text-white">
                             Prosperian creates Innovative FinTech Solutions to combat
                             Systemic Exclusion globally
-                        </p>
+                        </Typography>
 
-                        <div className="grid w-full max-w-7xl grid-cols-2 gap-10 md:grid-cols-3">
+                        <div className="grid w-full max-w-7xl grid-cols-2 gap-10 md:grid-cols-3 mt-20">
                             {services.map((service) => (
                                 <div
                                     key={service.title}
@@ -86,9 +88,9 @@ export default function HomePage() {
                                         height={40}
                                     />
 
-                                    <p className="text-sm font-medium">
+                                    <Typography variant="20px" className="text-white">
                                         {service.title}
-                                    </p>
+                                    </Typography>
                                 </div>
                             ))}
                         </div>
@@ -106,25 +108,25 @@ export default function HomePage() {
             </section>
 
             {/* Stats */}
-            <section className="bg-white py-16 m-auto px-16">
+            <section className="bg-[#F4F4F4] py-16 m-auto px-16">
                 <div className="container-custom">
                     <div className="grid gap-10 md:grid-cols-4">
                         {stats.map((item) => (
                             <div
                                 key={item.label}
-                                className="border-r border-gray-200 pr-6 last:border-r-0"
+                                className="border-r-3 border-dashed border-gray-200 pr-6 last:border-r-0"
                             >
-                                <h2 className="text-5xl font-bold text-black">
+                                <Typography variant="64px" className="text-black">
                                     {item.value}
-                                </h2>
+                                </Typography>
 
-                                <p className="mt-2 font-semibold text-gray-700">
+                                <Typography variant="22px" className="text-black">
                                     {item.label}
-                                </p>
+                                </Typography>
 
-                                <p className="mt-4 text-sm leading-6 text-gray-500">
+                                <Typography variant="14px" className="text-black mt-9">
                                     {item.description}
-                                </p>
+                                </Typography>
                             </div>
                         ))}
                     </div>
@@ -132,82 +134,38 @@ export default function HomePage() {
             </section>
 
             {/* Challenge */}
-            <section className="bg-white py-20 px-16">
-                <div className="container-custom">
-                    <div className="grid items-center gap-16 md:grid-cols-2">
-                        <div>
-                            <h2 className="mb-8 text-4xl font-bold text-black">
-                                The Challenge:
-                                <br />
-                                Systemic Exclusion
-                            </h2>
-
-                            <p className="leading-8 text-gray-600">
-                                The mass consumer market has long been excluded from
-                                sophisticated service offerings due to the inability of
-                                legacy systems to support modern transaction and product
-                                models. Existing fee structures prevent systemic
-                                inclusion.
-                            </p>
-
-                            <p className="mt-6 leading-8 text-gray-600">
-                                In an ever-escalating compliance-driven world,
-                                rendering offerings to the significant middle mass
-                                market has become even more challenging.
-                            </p>
-                        </div>
-
-                        <div>
-                            <Image
-                                src="/images/system-exe.png"
-                                alt="Systemic Exclusion"
-                                width={600}
-                                height={400}
-                                className="w-full rounded-xl"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <ContentSection
+                title={
+                    <>
+                        The Challenge:
+                        <br />
+                        Systemic Exclusion
+                    </>
+                }
+                image="/images/system-exe.png"
+                imageAlt="Systemic Exclusion"
+                paragraphs={[
+                    "The mass consumer market has long been excluded from sophisticated service offerings due to the inability of legacy systems to support micro transactions and product models not catering for infrequent payment patterns.",
+                    "In an ever-escalating compliance-orientated world, rendering offerings to the significant middle mass market has become even more challenging.",
+                ]}
+            />
 
             {/* Solution */}
-            <section className="bg-white pb-24 px-16">
-                <div className="container-custom">
-                    <div className="grid items-center gap-16 md:grid-cols-2">
-                        <div>
-                            <h2 className="mb-8 text-4xl font-bold text-black">
-                                The Solution:
-                                <br />
-                                Global FinTech Platform
-                            </h2>
-
-                            <p className="leading-8 text-gray-600">
-                                With a true desire to change the world for the better,
-                                by alleviating the difficulties that consumers in the
-                                mass market face daily, we saw innovative technology as
-                                the right tool to do just that.
-                            </p>
-
-                            <p className="mt-6 leading-8 text-gray-600">
-                                We assembled resources and pursued an ambitious
-                                international expansion plan, leveraging new skills,
-                                travelling worldwide and embracing diverse cultures to
-                                shape our unique products.
-                            </p>
-                        </div>
-
-                        <div>
-                            <Image
-                                src="/images/global-fintech.png"
-                                alt="Global Fintech Platform"
-                                width={600}
-                                height={400}
-                                className="w-full rounded-xl"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <ContentSection
+                title={
+                    <>
+                        The Solution:
+                        <br />
+                        Global FinTech Platform
+                    </>
+                }
+                image="/images/global-fintech.png"
+                imageAlt="Global FinTech Platform"
+                paragraphs={[
+                    "With a true desire to change the world for the better, by alleviating the difficulties that consumers in the mass market face daily, we saw innovative technology as the right tool to do just that.",
+                    "We have developed a global FinTech platform that enables financial institutions to deliver sophisticated services to the mass market, without the need for significant investment in technology infrastructure.",
+                ]}
+            />
         </>
     );
 }

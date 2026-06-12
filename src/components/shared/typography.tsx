@@ -1,38 +1,55 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-type Variant = "h1" | "h2" | "h3" | "h4" | "h5" | "p";
-
 interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
   variant?: Variant;
   as?: React.ElementType;
 }
 
+type Variant = "84px" | "64px" | "36px" | "22px" | "20px" | "14px" | "20px-regular" | "54px" | "42px";
+
 const styles: Record<Variant, string> = {
-  h1: "font-roboto font-bold text-5xl md:text-6xl lg:text-7xl leading-tight tracking-normal",
+  "84px":
+    "font-['Helvetica_Neue'] font-bold text-[40px] sm:text-[52px] md:text-[64px] lg:text-[74px] xl:text-[84px] leading-[0.85] tracking-normal text-center",
 
-  h2: "font-roboto font-bold text-4xl md:text-5xl lg:text-6xl leading-tight tracking-normal uppercase",
+  "64px":
+    "font-['Helvetica'] font-bold text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] leading-[100%] tracking-normal text-center",
 
-  h3: "font-roboto font-semibold text-3xl md:text-4xl leading-relaxed tracking-normal",
+  "54px":
+    "font-['Helvetica_Neue'] font-bold text-[32px] sm:text-[38px] md:text-[44px] lg:text-[50px] xl:text-[54px] leading-[42px] md:leading-[56px] xl:leading-[70px] tracking-normal text-center",
 
-  h4: "font-open-sans font-bold text-xl md:text-2xl leading-snug tracking-normal",
+  "42px":
+    "font-['Helvetica'] font-bold text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[42px] leading-[100%] tracking-normal text-center",
 
-  h5: "font-roboto font-medium text-lg lg:text-xl leading-relaxed tracking-normal",
+  "36px":
+    "font-['Helvetica'] font-bold text-[28px] sm:text-[30px] md:text-[32px] lg:text-[34px] xl:text-[36px] leading-[100%] tracking-normal",
 
-  p: "font-roboto text-base lg:text-lg leading-relaxed tracking-normal",
+  "22px":
+    "font-inter font-bold text-[18px] sm:text-[20px] lg:text-[22px] leading-[100%] tracking-normal text-center",
+
+  "20px":
+    "font-inter font-semibold text-[18px] lg:text-[20px] leading-[100%] tracking-normal",
+
+  "20px-regular":
+    "font-['Helvetica'] font-normal text-[18px] lg:text-[20px] leading-[28px] text-justify",
+
+  "14px":
+    "font-['Helvetica'] font-normal text-[14px] leading-[100%] tracking-normal text-center",
 };
 
 export function Typography({
-  variant = "p",
-  as,
+  variant = "64px",
+  as: Component = "div",
   className,
   ...props
 }: TypographyProps) {
-  const Component = as || variant;
-
   return (
     <Component
-      className={cn("text-white z-10 relative", styles[variant], className)}
+      className={cn(
+        "relative z-10 text-black",
+        styles[variant],
+        className
+      )}
       {...props}
     />
   );
