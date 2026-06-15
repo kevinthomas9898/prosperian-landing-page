@@ -7,67 +7,81 @@ export default function WorldPage() {
 
 
     const milestones: TimelineItem[] = [
-        { year: "2002", side: "left",
+        {
+            year: "2002", side: "left",
             description: "South African (ZA) Operation Starts in a Basement",
         },
-        { year: "2012", side: "right",
+        {
+            year: "2012", side: "right",
             description:
                 "ZA Operation reaches 980 Permanent Staff across 24 Locations",
         },
-        { year: "2014", side: "left",
+        {
+            year: "2014", side: "left",
             description:
                 "Prosperian Capital International Incorporates in Mauritius (MU) for Global Market Development",
         },
-        { year: "2015", side: "right",
+        {
+            year: "2015", side: "right",
             description:
                 "MU Operation Completes PLANetPay Global Platform Development",
         },
-        { year: "2016", side: "left",
+        {
+            year: "2016", side: "left",
             description: [
                 "eServe MU launches First Products in 2 Countries",
                 "ZA Operation Winds up after Concluding 2 Million Subscription Contracts",
             ],
         },
-        { year: "2017", side: "right",
+        {
+            year: "2017", side: "right",
             description:
                 "eServe MU Extends Territorial Reach to 29 Countries",
         },
-        { year: "2018", side: "left",
+        {
+            year: "2018", side: "left",
             description:
                 "Prosperian Wealth Establishes in Hong Kong",
         },
-        { year: "2019", side: "right",
+        {
+            year: "2019", side: "right",
             description: [
                 "Key Team Members completes Research Visits to 44 Countries",
                 "eServe SG Expands to 80 Countries",
             ],
         },
-        { year: "2020", side: "left",
+        {
+            year: "2020", side: "left",
             description: [
                 "Prosperian Capital International Incorporates in Singapore",
                 "PLANetPay Global Platform Achieves PCI DSS Certification",
             ],
         },
-        { year: "2022", side: "right",
+        {
+            year: "2022", side: "right",
             description: [
                 "Acquire Tankwa CyberFarm Property",
                 "Conclude BaaS Contract with PayPay Ya & Premier ADVantage Card Service Providers",
                 "Integrated to Tier 1 Global PSPs",
             ],
         },
-        { year: "2023", side: "left",
+        {
+            year: "2023", side: "left",
             description:
                 "Implemented Advanced Risk Mitigation Tools",
         },
-        { year: "2024", side: "right",
+        {
+            year: "2024", side: "right",
             description:
                 "Restructured for Efficiency & Future Growth",
         },
-        { year: "2025", side: "left",
+        {
+            year: "2025", side: "left",
             description:
                 "Additional Product Rollouts & Growth",
         },
-        { year: "2026", side: "right",
+        {
+            year: "2026", side: "right",
             description:
                 "Planned Digital Equity Offering",
         },
@@ -75,6 +89,7 @@ export default function WorldPage() {
     return (
         <>
             <WorldSection />
+            <Typography variant="42px" className="text-[#B94E1E] pt-[80px]">OUR ENVIRONMENT</Typography>
             <ContentSection
                 title="LifeStyle Enhancing eServices on Subscription"
                 image="/images/life-style.png"

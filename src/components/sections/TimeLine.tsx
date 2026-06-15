@@ -29,7 +29,7 @@ export function Timeline({
                     {/* Vertical Line */}
                     <div className="absolute left-1/2 top-0 h-full w-[3px] -translate-x-1/2 bg-black" />
 
-                    <div className="space-y-16">
+                    <div className="space-y-8">
                         {items.map((item, index) => (
                             <div
                                 key={`${item.year}-${index}`}

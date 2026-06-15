@@ -26,11 +26,11 @@ export function OverviewSection({
     return (
         <section
             className={cn(
-                "bg-white py-12 md:py-10 px-6 md:px-16",
+                "bg-white py-12 md:py-10 px-44",
                 className
             )}
         >
-            <div className="container-custom max-w-6xl m-auto">
+            <div className="container-custom m-auto">
                 <div className="text-center">
                     <Typography variant="54px" className="text-black">
                         {title}
@@ -38,8 +38,8 @@ export function OverviewSection({
 
                     {subtitle && (
                         <Typography
-                            variant="22px"
-                            className="mt-2 text-[#4B4B4B]"
+                            variant="22px-regular"
+                            className="mt-2 text-[#4B4B4B] text-center"
                         >
                             {subtitle}
                         </Typography>
@@ -63,8 +63,8 @@ export function OverviewSection({
                     {paragraphs.map((paragraph, index) => (
                         <Typography
                             key={index}
-                            variant="20px-regular"
-                            className="text-[#4B4B4B]"
+                            variant="22px-regular"
+                            className="text-black"
                         >
                             {paragraph}
                         </Typography>

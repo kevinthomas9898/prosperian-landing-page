@@ -6,7 +6,7 @@ interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
   as?: React.ElementType;
 }
 
-type Variant = "84px" | "64px" | "36px" | "22px" | "20px" | "14px" | "20px-regular" | "54px" | "42px";
+type Variant = "84px" | "64px" | "54px" | "42px" | "36px" | "22px" | "22px-regular" | "20px" | "20px-regular" | "18px" | "14px";
 
 const styles: Record<Variant, string> = {
   "84px":
@@ -27,16 +27,21 @@ const styles: Record<Variant, string> = {
   "22px":
     "font-inter font-bold text-[18px] sm:text-[20px] lg:text-[22px] leading-[100%] tracking-normal text-center",
 
+  "22px-regular":
+    "font-inter font-normal text-[18px] sm:text-[20px] lg:text-[22px] leading-[100%] tracking-normal text-start",
+
   "20px":
     "font-inter font-semibold text-[18px] lg:text-[20px] leading-[100%] tracking-normal",
 
   "20px-regular":
     "font-['Helvetica'] font-normal text-[18px] lg:text-[20px] leading-[28px] text-justify",
 
+  "18px":
+    "font-['Helvetica'] font-bold text-[18px] leading-[100%] tracking-normal",
+
   "14px":
     "font-['Helvetica'] font-normal text-[14px] leading-[100%] tracking-normal text-center",
 };
-
 export function Typography({
   variant = "64px",
   as: Component = "div",

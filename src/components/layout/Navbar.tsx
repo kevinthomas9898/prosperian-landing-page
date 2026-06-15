@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { NAV_LINKS } from "@/constants/navigation";
 import { usePathname } from "next/navigation";
+import { Typography } from "../shared/typography";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -24,16 +25,17 @@ export default function Navbar() {
           <ul className="flex items-center gap-10">
             {NAV_LINKS.map((item) => (
               <li key={item.label}>
-                <Link
-                  href={item.href}
-                  className={`text-sm font-medium transition-colors hover:text-orange-600 ${
-                    pathname === item.href
-                      ? "text-orange-600 border-b-2 border-orange-600"
-                      : "text-neutral-800"
-                  }`}
-                >
-                  {item.label}
-                </Link>
+                <Typography variant="18px">
+                  <Link
+                    href={item.href}
+                    className={`transition-colors hover:text-orange-600 ${pathname === item.href
+                        ? "text-orange-600 border-b-2 pb-3 border-orange-600"
+                        : "text-neutral-800"
+                      }`}
+                  >
+                    {item.label}
+                  </Link>
+                </Typography>
               </li>
             ))}
           </ul>

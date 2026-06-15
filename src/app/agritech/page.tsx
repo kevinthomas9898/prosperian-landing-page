@@ -12,7 +12,7 @@ export default function AgritechPage() {
                 paragraphs={[
                     "Prosperian AgriTech is a technology-driven infrastructure platform uniting sustainable agriculture and digital production under one renewable energy ecosystem.",
                     "Through AgriNova, the company operates advanced vertical farming systems that deliver reliable, sustainable food production. Through BrightByte, it deploys high-performance cyber-farming infrastructure that converts renewable energy into digital assets using sophisticated treasury management.",
-                    "Together, these two platforms create a powerful synergy: renewable energy powering both the farms that feed the world and the digital infrastructure that powers tomorrow’s economy.",
+                    "Together, these two platforms create a powerful synergy: renewable energy powering both the farms that feed the world and the digital infrastructure that powers tomorrow's economy.",
                     "Prosperian AgriTech stands at the intersection of technology, sustainability, and intelligent capital deployment, building resilient systems designed for the future.",
                 ]}
             />

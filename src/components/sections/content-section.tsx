@@ -29,6 +29,9 @@ interface ContentSectionProps {
 
     imageClassName?: string;
 
+    titleClassName?: string;
+    paragraphClassName?: string;
+
     button?: ContentSectionButton;
 }
 
@@ -41,6 +44,8 @@ export function ContentSection({
     className,
     variant = "default",
     imageClassName,
+    titleClassName,
+    paragraphClassName,
     button,
 }: ContentSectionProps) {
     return (
@@ -64,7 +69,10 @@ export function ContentSection({
                     )}
                 >
                     <div>
-                        <Typography variant="36px" className="text-black">
+                        <Typography
+                            variant="36px"
+                            className={cn("text-black", titleClassName)}
+                        >
                             {title}
                         </Typography>
 
@@ -76,7 +84,8 @@ export function ContentSection({
                                     className={cn(
                                         "text-[#4B4B4B]",
                                         variant === "default" &&
-                                            "w-full md:w-11/12"
+                                            "w-full md:w-11/12",
+                                        paragraphClassName
                                     )}
                                 >
                                     {paragraph}
@@ -89,7 +98,7 @@ export function ContentSection({
                                 {button.href ? (
                                     <Button
                                         asChild
-                                        className="bg-[#B94E1E] text-white min-w-44 py-5"
+                                        className="bg-[#B94E1E] text-white min-w-44 py-5 font-bold text-lg"
                                     >
                                         <Link
                                             href={button.href}
@@ -99,7 +108,10 @@ export function ContentSection({
                                         </Link>
                                     </Button>
                                 ) : (
-                                    <Button onClick={button.onClick} className="bg-[#B94E1E] text-white min-w-44 py-5">
+                                    <Button
+                                        onClick={button.onClick}
+                                        className="bg-[#B94E1E] text-white min-w-44 py-5 font-bold text-lg"
+                                    >
                                         {button.label}
                                     </Button>
                                 )}
