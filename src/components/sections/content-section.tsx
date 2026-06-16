@@ -112,9 +112,6 @@ export function ContentSection({
                                     >
                                         {button.href ? (
                                             <motion.div
-                                                whileHover={{ scale: 1.05 }}
-                                                whileTap={{ scale: 0.95 }}
-                                                transition={{ duration: 0.2 }}
                                             >
                                                 <Button
                                                     asChild
@@ -130,9 +127,6 @@ export function ContentSection({
                                             </motion.div>
                                         ) : (
                                             <motion.div
-                                                whileHover={{ scale: 1.05 }}
-                                                whileTap={{ scale: 0.95 }}
-                                                transition={{ duration: 0.2 }}
                                             >
                                                 <Button
                                                     onClick={button.onClick}

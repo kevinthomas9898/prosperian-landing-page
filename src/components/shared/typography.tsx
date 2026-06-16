@@ -6,7 +6,7 @@ interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
   as?: React.ElementType;
 }
 
-type Variant = "84px" | "64px" | "54px" | "42px" | "36px" | "22px" | "22px-regular" | "20px" | "20px-regular" | "18px" | "14px";
+type Variant = "84px" | "64px" | "54px" | "42px" | "36px" | "28px-regular" | "22px" | "22px-regular" | "20px" | "20px-regular" | "18px" | "14px";
 
 const styles: Record<Variant, string> = {
   "84px":
@@ -23,6 +23,9 @@ const styles: Record<Variant, string> = {
 
   "36px":
     "font-['Helvetica'] font-bold text-[28px] sm:text-[30px] md:text-[32px] lg:text-[34px] xl:text-[36px] leading-[100%] tracking-normal",
+
+  "28px-regular":
+    "font-['Helvetica'] font-normal text-[28px] leading-[46px] tracking-normal text-center",
 
   "22px":
     "font-inter font-bold text-[18px] sm:text-[20px] lg:text-[22px] leading-[100%] tracking-normal text-center",
