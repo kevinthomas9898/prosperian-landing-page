@@ -1,6 +1,10 @@
+"use client";
+
 import { Typography } from "@/components/shared/typography";
 import { ContentSection } from "@/components/sections/content-section";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { StaggerContainer, StaggerItem } from "@/components/shared/animated-wrapper";
 
 const stats = [
     {
@@ -66,72 +70,110 @@ export default function HomePage() {
 
                 <div className="container-custom relative z-10">
                     <div className="flex min-h-[650px] flex-col items-center justify-center py-20 pb-0 text-center">
-                        <Typography variant="84px" className="text-white">
-                            Global Fintech Solutions
-                        </Typography>
+                        <motion.div
+                            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                        >
+                            <Typography variant="84px" className="text-white">
+                                Global Fintech Solutions
+                            </Typography>
+                        </motion.div>
 
-                        <Typography variant="22px" className="mt-9 text-white">
-                            Prosperian creates Innovative FinTech Solutions to combat
-                            Systemic Exclusion globally
-                        </Typography>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                        >
+                            <Typography variant="22px" className="mt-9 text-white">
+                                Prosperian creates Innovative FinTech Solutions to combat
+                                Systemic Exclusion globally
+                            </Typography>
+                        </motion.div>
 
-                        <div className="grid w-full max-w-7xl grid-cols-2 gap-10 md:grid-cols-3 mt-20">
-                            {services.map((service) => (
-                                <div
-                                    key={service.title}
-                                    className="flex flex-col items-center gap-4"
-                                >
-                                    <Image
-                                        src={service.icon}
-                                        alt={service.title}
-                                        width={40}
-                                        height={40}
-                                    />
+                        <StaggerContainer staggerDelay={0.1}>
+                            <div className="grid w-full max-w-7xl grid-cols-2 gap-10 md:grid-cols-3 mt-20">
+                                {services.map((service) => (
+                                    <StaggerItem key={service.title} direction="scale">
+                                        <motion.div
+                                            className="flex flex-col items-center gap-4"
+                                            whileHover={{ scale: 1.1 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <Image
+                                                src={service.icon}
+                                                alt={service.title}
+                                                width={40}
+                                                height={40}
+                                            />
 
-                                    <Typography variant="20px" className="text-white">
-                                        {service.title}
-                                    </Typography>
-                                </div>
-                            ))}
-                        </div>
+                                            <Typography variant="20px" className="text-white">
+                                                {service.title}
+                                            </Typography>
+                                        </motion.div>
+                                    </StaggerItem>
+                                ))}
+                            </div>
+                        </StaggerContainer>
 
-                        <div className="mt-20">
+                        <motion.div
+                            className="mt-20"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+                        >
                             <Image
                                 src="/logos/globe.png"
                                 alt="Global Network"
                                 width={850}
                                 height={300}
                             />
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
 
             {/* Stats */}
-            <section className="bg-[#F4F4F4] py-16 m-auto px-16">
+            <motion.section
+                className="bg-[#F4F4F4] py-16 m-auto px-16"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+            >
                 <div className="container-custom">
-                    <div className="grid gap-10 md:grid-cols-4">
-                        {stats.map((item) => (
-                            <div
-                                key={item.label}
-                                className="border-r-3 border-dashed border-gray-200 pr-6 last:border-r-0"
-                            >
-                                <Typography variant="64px" className="text-black">
-                                    {item.value}
-                                </Typography>
+                    <StaggerContainer staggerDelay={0.1}>
+                        <div className="grid gap-10 md:grid-cols-4">
+                            {stats.map((item) => (
+                                <StaggerItem key={item.label} direction="bottom">
+                                    <div
+                                        className="border-r-3 border-dashed border-gray-200 pr-6 last:border-r-0"
+                                    >
+                                        <motion.div
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            whileInView={{ opacity: 1, scale: 1 }}
+                                            viewport={{ once: true, amount: 0.5 }}
+                                            transition={{ duration: 0.5, ease: "easeOut" }}
+                                        >
+                                            <Typography variant="64px" className="text-black">
+                                                {item.value}
+                                            </Typography>
+                                        </motion.div>
 
-                                <Typography variant="22px" className="text-black">
-                                    {item.label}
-                                </Typography>
+                                        <Typography variant="22px" className="text-black">
+                                            {item.label}
+                                        </Typography>
 
-                                <Typography variant="14px" className="text-black mt-9">
-                                    {item.description}
-                                </Typography>
-                            </div>
-                        ))}
-                    </div>
+                                        <Typography variant="14px" className="text-black mt-9">
+                                            {item.description}
+                                        </Typography>
+                                    </div>
+                                </StaggerItem>
+                            ))}
+                        </div>
+                    </StaggerContainer>
                 </div>
-            </section>
+            </motion.section>
 
             {/* Challenge */}
             <ContentSection

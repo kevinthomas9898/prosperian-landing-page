@@ -1,8 +1,12 @@
+"use client";
+
 import { Typography } from "@/components/shared/typography";
 import { ContentSection } from "@/components/sections/content-section";
 import { Timeline, type TimelineItem } from "@/components/sections/TimeLine";
 import Image from "next/image";
 import { WorldSection } from "@/components/sections/WorldSection";
+import { motion } from "framer-motion";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/shared/animated-wrapper";
 export default function WorldPage() {
 
 
@@ -89,7 +93,14 @@ export default function WorldPage() {
     return (
         <>
             <WorldSection />
-            <Typography variant="42px" className="text-[#B94E1E] pt-[80px]">OUR ENVIRONMENT</Typography>
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+                <Typography variant="42px" className="text-[#B94E1E] pt-[80px]">OUR ENVIRONMENT</Typography>
+            </motion.div>
             <ContentSection
                 title="LifeStyle Enhancing eServices on Subscription"
                 image="/images/life-style.png"
@@ -114,22 +125,32 @@ export default function WorldPage() {
                     "Our proprietory PlaNet system is a comprehensive platform that supports eCommerce and FinTech businesses globally throughout the customer lifecycle, from Product Rendering, Customer Acquisition through AI-Driven eMarketing, Account Hosting, BackOffice Systems, Billing, Card Issuing, Digital Payment Channels, Payment Processing, PCI DSS Compliant Card Handling, eBanking, eWallet Technology, Asset Digitalisation, Equity Trading Automation, Field Agents, Financial Accounting Systems, Mobile Applications, Messaging Gateways, Multi-Channel CRM, Contact Centre Operations, and various Specialised Integrations & Gateway Solutions."
                 ]}
             />
-            <div className="mx-16 mb-20">
-                <Typography variant="36px" className="text-black">
-                    Where We Started
-                </Typography>
-                {/* cnver to ul */}
-                <Typography variant="20px-regular" className="text-[#4B4B4B
+            <FadeIn>
+                <div className="mx-16 mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.5 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                    >
+                        <Typography variant="36px" className="text-black">
+                            Where We Started
+                        </Typography>
+                    </motion.div>
+                    <StaggerContainer staggerDelay={0.1}>
+                        <Typography variant="20px-regular" className="text-[#4B4B4B
             ] mt-10">
-                    <ul className="space-y-4">
-                        <li>As a somewhat disillusioned South African entrepreneur, Francois Olivier assumed the role of business development director for Prosperian in Mauritius in 2014, after Prosperian's success in South Africa since 2002. At its apex, Prosperian's South African business reached roughly 2 million consumer contracts, supported by roughly 1,000 permanent staff members.</li>
-                        <li>During 2018 Prosperian moved its operation from Mauritius to Singapore, with limited financial and human resources, to accomplish our extremely ambitious international expansion dream. During this time, in our startup phase, we had to learn new skills, travel the globe, and employ vast resources and new technologies to form our unique products in the melting pot of cultures and solutions, that our business has become today.</li>
-                        <li>We had to develop tech solutions from scratch, by utilising technology that was not available even up to a few years ago, against the backdrop of large, multi-national companies employing billions, with substantially bigger teams, to accomplish the reach that we did, so far</li>
-                        <li>The shear scope and complexity of our project, at times, proved more challenging than expected and we had to find innovative workarounds to make offerings function as intended.</li>
-                        <li>Most importantly, we had to learn how to reach each market cost-effectively and to engage with consumers in their own preferred manner, whilst gathering crucial clientbase behavioural statistics and building attrition and payment profiles, by offering services over a minimum period of 2 years in each market.</li>
-                    </ul>
-                </Typography>
-            </div>
+                            <ul className="space-y-4">
+                                {["As a somewhat disillusioned South African entrepreneur, Francois Olivier assumed the role of business development director for Prosperian in Mauritius in 2014, after Prosperian's success in South Africa since 2002. At its apex, Prosperian's South African business reached roughly 2 million consumer contracts, supported by roughly 1,000 permanent staff members.", "During 2018 Prosperian moved its operation from Mauritius to Singapore, with limited financial and human resources, to accomplish our extremely ambitious international expansion dream. During this time, in our startup phase, we had to learn new skills, travel the globe, and employ vast resources and new technologies to form our unique products in the melting pot of cultures and solutions, that our business has become today.", "We had to develop tech solutions from scratch, by utilising technology that was not available even up to a few years ago, against the backdrop of large, multi-national companies employing billions, with substantially bigger teams, to accomplish the reach that we did, so far", "The shear scope and complexity of our project, at times, proved more challenging than expected and we had to find innovative workarounds to make offerings function as intended.", "Most importantly, we had to learn how to reach each market cost-effectively and to engage with consumers in their own preferred manner, whilst gathering crucial clientbase behavioural statistics and building attrition and payment profiles, by offering services over a minimum period of 2 years in each market."].map((item, index) => (
+                                    <StaggerItem key={index} direction="bottom">
+                                        <li>{item}</li>
+                                    </StaggerItem>
+                                ))}
+                            </ul>
+                        </Typography>
+                    </StaggerContainer>
+                </div>
+            </FadeIn>
             <ContentSection
                 title="Regulated Service Providers"
                 image="/images/service-provider.png"
@@ -141,10 +162,16 @@ export default function WorldPage() {
 
             <Timeline items={milestones} />
 
-            <div className="bg-black p-14">
+            <motion.div
+                className="bg-black p-14"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+            >
                 <Typography variant="42px" className="text-[#B94E1E]">OUR TEAM</Typography>
                 <Typography variant="20px-regular" className="text-white text-3xl">Executives</Typography>
-            </div>
+            </motion.div>
         </>
     );
 }

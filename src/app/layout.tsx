@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { AnimationProvider } from "@/components/shared/animation-context";
 
 export const metadata: Metadata = {
   title: "Prosperian Capital",
@@ -21,13 +22,15 @@ export default function RootLayout({
       className="h-full antialiased"
     >
       <body className="font-sans min-h-screen flex flex-col">
-        <Navbar />
+        <AnimationProvider>
+          <Navbar />
 
-        <main className="flex-1">
-          {children}
-        </main>
+          <main className="flex-1">
+            {children}
+          </main>
 
-        <Footer />
+          <Footer />
+        </AnimationProvider>
       </body>
     </html>
   );

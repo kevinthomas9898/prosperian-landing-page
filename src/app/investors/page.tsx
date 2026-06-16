@@ -1,7 +1,11 @@
+"use client";
+
 import { ContentSection } from "@/components/sections/content-section";
 import { OverviewSection } from "@/components/sections/overview-section";
 import { Typography } from "@/components/shared/typography";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/shared/animated-wrapper";
 
 export default function Wealth() {
     return (
@@ -51,7 +55,13 @@ export default function Wealth() {
                 ]}
             />
 
-            <div className="mt-12 bg-[#B94E1E] py-6 px-6">
+            <motion.div
+                className="mt-12 bg-[#B94E1E] py-6 px-6"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+            >
                 <div className="container-custom">
                     <Typography
                         variant="36px"
@@ -63,7 +73,7 @@ export default function Wealth() {
                         Partner with us through your Project & Channel of Preference…
                     </Typography>
                 </div>
-            </div>
+            </motion.div>
 
             <ContentSection
                 title="Powering the Next Generation of Digital Infrastructure Returns"
@@ -78,21 +88,32 @@ export default function Wealth() {
                     "Once-Off Investment Tiers: $2,500 / $5,000 / $10,000",
                 ]}
             />
-            <div className="mx-16 mb-20">
-                <Typography variant="36px" className="text-black">
-                    CyberFarming: BrightByte CyberFarming
-                </Typography>
-                {/* cnver to ul */}
-                <Typography variant="20px-regular" className="text-[#4B4B4B
+            <FadeIn>
+                <div className="mx-16 mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, amount: 0.5 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                    >
+                        <Typography variant="36px" className="text-black">
+                            CyberFarming: BrightByte CyberFarming
+                        </Typography>
+                    </motion.div>
+                    <StaggerContainer staggerDelay={0.1}>
+                        <Typography variant="20px-regular" className="text-[#4B4B4B
             ] mt-10">
-                    <ul className="space-y-4">
-                        <li>Enabling Participation in Renewables for Micro-Investors</li>
-                        <li>BrightBite is a renewable-powered digital infrastructure company developing and operating modular compute facilities in strategically selected locations. The company integrates utility-scale renewable energy generation with high-density compute operations and an intelligent post-production digital-asset management framework.</li>
-                        <li>Unlike traditional crypto mining or data-centre operators, BrightBite's competitive advantage lies not only in low-cost energy and efficient infrastructure, but in the disciplined management, allocation, and reinvestment of digital outputs. This approach transforms infrastructure production into a managed capital engine, designed to generate resilient, compounding returns over time.</li>
-                        <li>BrightBite targets long-term capital partners seeking exposure to renewable infrastructure, digital compute demand, and alternative yield strategies—without reliance on speculative assumptions or single revenue sources.</li>
-                    </ul>
-                </Typography>
-            </div>
+                            <ul className="space-y-4">
+                                {["Enabling Participation in Renewables for Micro-Investors", "BrightBite is a renewable-powered digital infrastructure company developing and operating modular compute facilities in strategically selected locations. The company integrates utility-scale renewable energy generation with high-density compute operations and an intelligent post-production digital-asset management framework.", "Unlike traditional crypto mining or data-centre operators, BrightBite's competitive advantage lies not only in low-cost energy and efficient infrastructure, but in the disciplined management, allocation, and reinvestment of digital outputs. This approach transforms infrastructure production into a managed capital engine, designed to generate resilient, compounding returns over time.", "BrightBite targets long-term capital partners seeking exposure to renewable infrastructure, digital compute demand, and alternative yield strategies—without reliance on speculative assumptions or single revenue sources."].map((item, index) => (
+                                    <StaggerItem key={index} direction="bottom">
+                                        <li>{item}</li>
+                                    </StaggerItem>
+                                ))}
+                            </ul>
+                        </Typography>
+                    </StaggerContainer>
+                </div>
+            </FadeIn>
             <ContentSection
                 title="Digitized eCommerce Participation"
                 image="/images/eserve.png"
@@ -106,21 +127,32 @@ export default function Wealth() {
                     "Once-Off Investment Tiers: $2,500 / $5,000 / $10,000"
                 ]}
             />
-            <div className="mx-16 mb-20">
-                <Typography variant="36px" className="text-black">
-                    eCommerce: eServe Global Consumer Subscription Services
-                </Typography>
-                {/* cnver to ul */}
-                <Typography variant="20px-regular" className="text-[#4B4B4B
+            <FadeIn>
+                <div className="mx-16 mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, amount: 0.5 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                    >
+                        <Typography variant="36px" className="text-black">
+                            eCommerce: eServe Global Consumer Subscription Services
+                        </Typography>
+                    </motion.div>
+                    <StaggerContainer staggerDelay={0.1}>
+                        <Typography variant="20px-regular" className="text-[#4B4B4B
             ] mt-10">
-                    <ul className="space-y-4">
-                        <li>“Powering Global Subscriptions, Sharing the Rewards.”</li>
-                        <li>eServe Global is a cutting-edge eCommerce platform that enables millions of consumers worldwide to access and manage online subscription services seamlessly. By investing in eServe Global through our secured loan note program, you participate directly in a predictable, subscription-based revenue model, targeting up to 40% annual returns.</li>
-                        <li>Our platform is designed for scalable growth, transparent reporting, and investor accessibility — allowing you to start with as little as USD 1,000. With recurring subscription income as the backbone, eServe Global combines innovative technology, global reach, and secure investment structure to create a high-yield opportunity for both retail and accredited investors.</li>
-                        <li>Invest in the future of digital subscriptions — watch your returns grow as the world goes subscription-first.</li>
-                    </ul>
-                </Typography>
-            </div>
+                            <ul className="space-y-4">
+                                {["“Powering Global Subscriptions, Sharing the Rewards.”", "eServe Global is a cutting-edge eCommerce platform that enables millions of consumers worldwide to access and manage online subscription services seamlessly. By investing in eServe Global through our secured loan note program, you participate directly in a predictable, subscription-based revenue model, targeting up to 40% annual returns.", "Our platform is designed for scalable growth, transparent reporting, and investor accessibility — allowing you to start with as little as USD 1,000. With recurring subscription income as the backbone, eServe Global combines innovative technology, global reach, and secure investment structure to create a high-yield opportunity for both retail and accredited investors.", "Invest in the future of digital subscriptions — watch your returns grow as the world goes subscription-first."].map((item, index) => (
+                                    <StaggerItem key={index} direction="bottom">
+                                        <li>{item}</li>
+                                    </StaggerItem>
+                                ))}
+                            </ul>
+                        </Typography>
+                    </StaggerContainer>
+                </div>
+            </FadeIn>
 
 
             <ContentSection
@@ -136,26 +168,41 @@ export default function Wealth() {
                     "Once-Off Investment Tiers: $2,500 / $5,000 / $10,000"
                 ]}
             />
-            <div className="mx-16 mb-20">
-                <Typography variant="36px" className="text-black">
-                    Diversifying Property Investment with Limited Capital: DigiProp
-                </Typography>
-                {/* cnver to ul */}
-                <Typography variant="20px-regular" className="text-[#4B4B4B
+            <FadeIn>
+                <div className="mx-16 mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, amount: 0.5 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                    >
+                        <Typography variant="36px" className="text-black">
+                            Diversifying Property Investment with Limited Capital: DigiProp
+                        </Typography>
+                    </motion.div>
+                    <StaggerContainer staggerDelay={0.1}>
+                        <Typography variant="20px-regular" className="text-[#4B4B4B
             ] mt-10">
-                    <ul className="space-y-4">
-                        <li>Enabling Real Estate Investment Without Boundaries or Barrier</li>
-                        <li>“Your Key to Property Ownership, One Digital Share at a Time.”</li>
-                        <li>DigiProp revolutionizes how you invest in real estate, making ownership accessible, flexible, and rewarding. Through cutting-edge digitization of property assets, we open the doors to a world where anyone can own a piece of high-value properties, no matter their location or financial standing. </li>
-                        <li>DigiProp offers Affordable Entry, Global Access, Ease and Security through Blockchain-backed technology that ensures seamless, transparent, and secure transactions. </li>
-                        <li>Invest with Purpose and Passion - Whether you're diversifying your portfolio, building wealth, or fulfilling a lifelong dream of property ownership, DigiProp empowers you to take control of your financial future. </li>
-                        <li>Don't just watch the real estate market grow - be a part of it! Join the DigiProp revolution today. </li>
-                    </ul>
-                </Typography>
-            </div>
+                            <ul className="space-y-4">
+                                {["Enabling Real Estate Investment Without Boundaries or Barrier", "“Your Key to Property Ownership, One Digital Share at a Time.”", "DigiProp revolutionizes how you invest in real estate, making ownership accessible, flexible, and rewarding. Through cutting-edge digitization of property assets, we open the doors to a world where anyone can own a piece of high-value properties, no matter their location or financial standing.", "DigiProp offers Affordable Entry, Global Access, Ease and Security through Blockchain-backed technology that ensures seamless, transparent, and secure transactions.", "Invest with Purpose and Passion - Whether you're diversifying your portfolio, building wealth, or fulfilling a lifelong dream of property ownership, DigiProp empowers you to take control of your financial future.", "Don't just watch the real estate market grow - be a part of it! Join the DigiProp revolution today."].map((item, index) => (
+                                    <StaggerItem key={index} direction="bottom">
+                                        <li>{item}</li>
+                                    </StaggerItem>
+                                ))}
+                            </ul>
+                        </Typography>
+                    </StaggerContainer>
+                </div>
+            </FadeIn>
 
 
-            <div className="mt-12 bg-[#B94E1E] p-20">
+            <motion.div
+                className="mt-12 bg-[#B94E1E] p-20"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+            >
                 <div className="container-custom">
                     <Typography
                         variant="36px"
@@ -164,25 +211,29 @@ export default function Wealth() {
                         Choose Your Channel of Preference…
                     </Typography>
 
-                    <div className="flex flex-row justify-center items-center gap-32">
-                        <div className="flex flex-col items-center justify-center">
-                            <Image src="/images/dice_1.png" alt="Venture Capital" className="mb-9" width={50} height={50} />
-                            <Typography variant="20px-regular" className="mx-auto max-w-5xl text-center text-white">VENTURE CAPITAL FIRMS</Typography>
-                            <Typography variant="14px" className="font-light mx-auto max-w-5xl text-center text-white">(Typical &gt;$1 Million)</Typography>
+                    <StaggerContainer staggerDelay={0.15}>
+                        <div className="flex flex-row justify-center items-center gap-32">
+                            {[
+                                { image: "/images/dice_1.png", alt: "Venture Capital", title: "VENTURE CAPITAL FIRMS", subtitle: "(Typical >$1 Million)" },
+                                { image: "/images/dice_2.png", alt: "Professional Investors", title: "PROFESSIONAL INVESTORS", subtitle: "(Typical >$100K)" },
+                                { image: "/images/dice_3.png", alt: "Security Token Offerings", title: "SECURITY TOKEN OFFERINGS", subtitle: "($10,000 / $25,000 / $50,000)" }
+                            ].map((item, index) => (
+                                <StaggerItem key={index} direction="scale">
+                                    <motion.div
+                                        className="flex flex-col items-center justify-center"
+                                        whileHover={{ scale: 1.1 }}
+                                        transition={{ duration: 0.2 }}
+                                    >
+                                        <Image src={item.image} alt={item.alt} className="mb-9" width={50} height={50} />
+                                        <Typography variant="20px-regular" className="mx-auto max-w-5xl text-center text-white">{item.title}</Typography>
+                                        <Typography variant="14px" className="font-light mx-auto max-w-5xl text-center text-white">{item.subtitle}</Typography>
+                                    </motion.div>
+                                </StaggerItem>
+                            ))}
                         </div>
-                        <div className="flex flex-col items-center justify-center">
-                            <Image src="/images/dice_2.png" alt="Professional Investors" className="mb-9" width={50} height={50} />
-                            <Typography variant="20px-regular" className="mx-auto max-w-5xl text-center text-white">PROFESSIONAL INVESTORS</Typography>
-                            <Typography variant="14px" className="font-light mx-auto max-w-5xl text-center text-white">(Typical &gt;$100K)</Typography>
-                        </div>
-                        <div className="flex flex-col items-center justify-center">
-                            <Image src="/images/dice_3.png" alt="Security Token Offerings" className="mb-9" width={50} height={50} />
-                            <Typography variant="20px-regular" className="mx-auto max-w-5xl text-center text-white">SECURITY TOKEN OFFERINGS</Typography>
-                            <Typography variant="14px" className="font-light mx-auto max-w-5xl text-center text-white">($10,000 / $25,000 / $50,000)</Typography>
-                        </div>
-                    </div>
+                    </StaggerContainer>
                 </div>
-            </div>
+            </motion.div>
         </>
     );
 }
