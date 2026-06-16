@@ -93,7 +93,7 @@ export default function Wealth() {
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.5 }}
+                        viewport={{ once: true, amount: 0.5 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                     >
                         <Typography variant="36px" className="text-black">
@@ -132,7 +132,7 @@ export default function Wealth() {
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.5 }}
+                        viewport={{ once: true, amount: 0.5 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                     >
                         <Typography variant="36px" className="text-black">
@@ -173,7 +173,7 @@ export default function Wealth() {
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.5 }}
+                        viewport={{ once: true, amount: 0.5 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                     >
                         <Typography variant="36px" className="text-black">

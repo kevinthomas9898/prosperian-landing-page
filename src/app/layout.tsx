@@ -6,6 +6,26 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { AnimationProvider } from "@/components/shared/animation-context";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Prosperian Capital",
+  url: "https://prosperiancapital.com",
+  logo: "https://prosperiancapital.com/logos/ProsperianCapitalLogo.png",
+  description: "Prosperian Capital delivers innovative fintech solutions, digital payment platforms, and sustainable technology infrastructure across 88 countries worldwide.",
+  sameAs: [
+    "https://twitter.com/ProsperianCap",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "SG",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+  },
+};
+
 export const metadata: Metadata = {
   title: "Prosperian Capital - Global Fintech Solutions",
   description: "Prosperian Capital delivers innovative fintech solutions, digital payment platforms, and sustainable technology infrastructure across 88 countries worldwide.",
@@ -68,6 +88,12 @@ export default function RootLayout({
       lang="en"
       className="h-full antialiased"
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="font-sans min-h-screen flex flex-col">
         <AnimationProvider>
           <Navbar />

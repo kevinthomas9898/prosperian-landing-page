@@ -1,7 +1,5 @@
 import { ContentSection } from "@/components/sections/content-section";
 import { OverviewSection } from "@/components/sections/overview-section";
-import { Typography } from "@/components/shared/typography";
-import Image from "next/image";
 
 export default function EServices() {
     return (
