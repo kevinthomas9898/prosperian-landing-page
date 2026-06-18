@@ -23,7 +23,7 @@ export default function Fintech() {
                 className="border border-gray-200 m-12 rounded-lg"
                 imageClassName="max-w-[600px]"
                 paragraphs={[
-                    "PulsePay enables global merchants to thrive—no matter the risk profile. With cutting-edge technology and a 100% acceptance rate, we don't just process payments—we drive growth."
+                    "PulsePay enables global merchants to thrive—no matter the risk profile. With cutting-edge technology and a 100% acceptance rate, we don’t just process payments—we drive growth."
                 ]}
                 button={
                     {
@@ -59,13 +59,26 @@ export default function Fintech() {
                 className="border border-gray-200 m-12 rounded-lg"
                 imageClassName="max-w-[600px]"
                 paragraphs={[
-                    "Prosperian Card is a modern global purchase card designed for a new generation of borderless commerce. Built for international users, it supports multilingual interaction and seamless payments across markets, making it easy to transact, manage spending, and access flexible purchasing power anywhere in the world.",
-
-                    "The Prosperian Card includes a built-in revolving credit facility that allows cardholders to make purchases today and repay over time within a flexible spending cycle. Because the credit limits are intentionally structured to remain within applicable regulatory thresholds in many jurisdictions, the product can be deployed efficiently across multiple territories while maintaining a streamlined onboarding experience.",
-
-                    "Beyond payments and credit, the Prosperian Card introduces a powerful ecosystem of value. Cardholders earn loyalty rewards on every transaction, turning everyday spending into meaningful benefits that accumulate over time. Businesses can also leverage the platform to remunerate employees, contractors, or sales agents instantly, enabling real-time payouts, incentives, or commissions directly onto their cards. This creates a dynamic financial tool that supports both spending and earning within a single integrated system.",
-
-                    "Elegant in design and powerful in function, the Prosperian Card is more than a payment tool—it is a gateway to global financial convenience, empowering individuals and businesses with accessible credit, frictionless transactions, intelligent rewards, and the freedom to prosper wherever opportunity appears."
+                    "The Prosperian Ambassador Card empowers you to earn, spend, and access credit with ease. Ambassadors can generate income by introducing the services of the Prosperian Capital Group to new clients, spend crypto seamlessly at participating merchants globally, and enjoy a flexible revolving credit facility available in most jurisdictions. It’s your gateway to earning, spending, and growing with Prosperian."
+                ]}
+                button={
+                    {
+                        label: "Website TBA",
+                        href: "#"
+                    }
+                }
+            />
+            <ContentSection
+                title="TerraX"
+                image="/images/terraX.png"
+                imageAlt="TerraX"
+                variant="compact"
+                reverse={true}
+                className="border border-gray-200 m-12 rounded-lg"
+                imageClassName="max-w-[600px]"
+                paragraphs={[
+                    "TerraX Financial is a global neo-banking and embedded finance platform providing SMEs with access to multi-currency accounts, digital asset wallets, cross-border payments, corporate card issuance, payroll services, treasury management, digitized fractional investments, equity trading, trade finance, and business lending solutions.",
+                    "Through a single integrated ecosystem, TerraX Finance enables businesses to transact, manage liquidity, and access capital globally, reducing operational complexity while accelerating international growth. The platform serves SMEs, e-commerce merchants, professional service firms, importers, exporters, and digital enterprises operating across multiple jurisdictions"
                 ]}
                 button={
                     {

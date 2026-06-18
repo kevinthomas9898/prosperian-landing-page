@@ -34,7 +34,7 @@ const styles: Record<Variant, string> = {
     "font-inter font-normal text-[18px] sm:text-[20px] lg:text-[22px] leading-[100%] tracking-normal text-start",
 
   "20px":
-    "font-inter font-semibold text-[18px] lg:text-[20px] leading-[100%] tracking-normal",
+    "font-inter font-semibold text-[15px] lg:text-[20px] leading-[100%] tracking-normal",
 
   "20px-regular":
     "font-['Helvetica'] font-normal text-[18px] lg:text-[20px] leading-[28px] text-justify",
